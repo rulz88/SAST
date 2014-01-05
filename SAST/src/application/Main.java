@@ -15,7 +15,7 @@ public class Main extends Application{
 	
 	static Stage stg;
 	static Stage permisos;
-	static Connector con;
+	public static Connector con;
 	static Stage laborSocial;
 	
     @Override 
