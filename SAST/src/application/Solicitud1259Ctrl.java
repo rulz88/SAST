@@ -19,13 +19,16 @@ public class Solicitud1259Ctrl implements Initializable {
 	@FXML private TextField tf_nombre;
 	@FXML private TextField tf_nombret;
 	@FXML private TextField tf_ausencia;
-	@FXML private ComboBox<String> cb_depto;
 	@FXML private TextField tf_plazaP;
 	@FXML private TextField tf_plazaT;
 	@FXML private TextField tf_jornada;
 	@FXML private TextField tf_descanzo;
 	@FXML private TextField tf_categoria;
 	@FXML private TextField tf_clasificacion;
+	
+	@FXML private ComboBox<String> cb_depto;
+	
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// Para meter un list en el ComboBox con los deptos

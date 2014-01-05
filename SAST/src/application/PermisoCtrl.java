@@ -8,8 +8,6 @@ import java.util.ResourceBundle;
 
 import extfx.scene.control.DatePicker;
 import application.model.AutoCompleteComboBoxListener;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,31 +26,26 @@ import javafx.scene.layout.Pane;
 
 public class PermisoCtrl implements Initializable {
 	
-	@FXML
-	static TextField tf_ficha;
-	@FXML
-	static TextField tf_trabajador;
-	@FXML
-	static TextField tf_depto;
-	@FXML
-	static TextArea ta_categoria;
-	@FXML Pane pn_main;
-	@FXML Button bt_borrar;
-	@FXML
-	static Label lbl_dia;
-	@FXML
-	static Label lbl_fecha2;
-	@FXML
-	static Label lbl_fecha3;
-	@FXML
-	static ImageView img_masFechas;
+	@FXML static TextField tf_ficha;
+	@FXML static TextField tf_trabajador;
+	@FXML static TextField tf_depto;
 	
-	//private LocalDate date;
+	@FXML static TextArea ta_categoria;
+	
+	@FXML Pane pn_main;
+	
+	@FXML Button bt_borrar;
+	
+	@FXML static Label lbl_dia;
+	@FXML static Label lbl_fecha2;
+	@FXML static Label lbl_fecha3;
+	@FXML static ImageView img_masFechas;
+	
 	private int ficha;
 	private String nombre;
 	private String clausula;
 	
-	ComboBox cb_clausula;
+	ComboBox<String> cb_clausula;
 	AutoCompleteComboBoxListener aux;
 	ObservableList data = FXCollections.observableArrayList(
 												"CL-150",
@@ -67,7 +60,7 @@ public class PermisoCtrl implements Initializable {
         datePicker.localeProperty().set(Locale.US);
         
 		/*	Combobox predictor para las clausulas mas comunes	*/
-		cb_clausula = new ComboBox();
+		cb_clausula = new ComboBox<String>();
 		cb_clausula.setLayoutX(565);
 		cb_clausula.setLayoutY(245);
 		cb_clausula.setPrefHeight(21);
@@ -87,7 +80,6 @@ public class PermisoCtrl implements Initializable {
 	
 	private final EventHandler actionButton = new EventHandler() {
 		@Override public void handle(Event arg0) {
-			// TODO Auto-generated method stub
 			System.out.println("Accion del combobox " +cb_clausula.getSelectionModel().selectedItemProperty().getValue());
 		}
 	};

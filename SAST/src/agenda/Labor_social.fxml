@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="650.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane prefHeight="650.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="agenda.LaborSocialCtrl">
   <!-- TODO Add Nodes -->
   <children>
     <ImageView fitHeight="105.0" fitWidth="124.50000208074397" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
@@ -47,7 +47,7 @@
       </columns>
     </TableView>
     <Label layoutX="37.0" layoutY="350.0" prefWidth="451.0" text="LISTA DE ASISTENCIA DE TRANSITORIOS DE PETROQUIMICA A LA LABOR SOCIAL " textAlignment="CENTER" />
-    <Button layoutX="384.0" layoutY="298.0" mnemonicParsing="false" text="Agregar">
+    <Button layoutX="384.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#btnAgregar" text="Agregar">
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -56,7 +56,7 @@
         </ImageView>
       </graphic>
     </Button>
-    <Button layoutX="286.0" layoutY="298.0" mnemonicParsing="false" text="Limpiar">
+    <Button layoutX="286.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#btnLimpiar" text="Limpiar">
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
       </graphic>

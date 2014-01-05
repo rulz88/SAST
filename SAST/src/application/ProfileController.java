@@ -51,24 +51,20 @@ import application.model.User;
 public class ProfileController extends AnchorPane implements Initializable {
 
 	/*componentes*/
-    @FXML
-    private TextField user;
-    @FXML
-    private TextField phone;
-    @FXML
-    private TextField email;
-    @FXML
-    private TextArea address;
-    @FXML 
-    private Button btn_update;
-    @FXML 
-    private Button btn_continue;
-    @FXML 
-    private Label success;
+    @FXML private TextField user;
+    @FXML private TextField phone;
+    @FXML private TextField email;
+    
+    @FXML private TextArea address;
+    
+    @FXML private Button btn_update;
+    @FXML private Button btn_continue;
+    
+    @FXML private Label success;
     
     private Login application;
     private Main principal;
-	private Stage profile;
+	//private Stage profile;
     
     public void setApp(Login application){
         this.application = application;

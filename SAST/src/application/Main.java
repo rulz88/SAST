@@ -16,6 +16,7 @@ public class Main extends Application{
 	static Stage stg;
 	static Stage permisos;
 	static Connector con;
+	static Stage laborSocial;
 	
     @Override 
     public void start(Stage stage) throws Exception {
@@ -42,6 +43,13 @@ public class Main extends Application{
         Scene scenep = new Scene(rootp);
         permisos.setScene(scenep);
         permisos.setTitle("Permiso");
+        
+        laborSocial = new Stage();
+        laborSocial.setResizable(false);
+    	Parent labor = FXMLLoader.load(getClass().getResource("..\\agenda\\Labor_social.fxml"));
+        Scene scenelab = new Scene(labor);
+        laborSocial.setScene(scenelab);
+        laborSocial.setTitle("Labor Social");
         
         
     }

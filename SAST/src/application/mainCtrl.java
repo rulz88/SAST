@@ -28,10 +28,20 @@ public class mainCtrl implements Initializable {
 
 	}
 	
+	/*
+	 * 	Botones de la Barra de Herramientas
+	 * */
+	
 	@FXML public void btnTareas(ActionEvent ae) {
     	Main.permisos.show();
     	Main.stg.toBack();
     	Main.permisos.toFront();
+    }
+	
+	@FXML public void btnAgenda(ActionEvent ae) {
+    	Main.laborSocial.show();
+    	Main.stg.toBack();
+    	Main.laborSocial.toFront();
     }
 	
 	@FXML public void btnSalir(ActionEvent ae) {
