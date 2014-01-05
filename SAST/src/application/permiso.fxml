@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pn_main" prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.PermisoCtrl">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fitHeight="109.0" fitWidth="129.24286308608245" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/stprm-logo.png" />
+      </image>
+    </ImageView>
+    <Label layoutX="239.0" layoutY="15.0" prefHeight="75.0" prefWidth="325.0" text="SINDICATO DE TRABAJADORES PETROLEROS &#10;DE LA REPUBLICA MEXICANA&#10; SECCIÓN No. 38 &#10;COMITE EJECUTIVO LOCAL" textAlignment="CENTER" textFill="BLACK">
+      <font>
+        <Font name="Quicksand-Bold" size="14.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label layoutX="124.0" layoutY="100.0" text="AV. MANUEL AVILA CAMACHO No 64&#10;APARTADO POSTAL No. 66&#10;SALINA CRUZ, OAX.">
+      <font>
+        <Font name="Quicksand-Regular" size="14.0" fx:id="x2" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="451.0" layoutY="108.0" text="OFICIO No." />
+    <Label font="$x1" layoutX="451.0" layoutY="132.0" text="EXPEDIENTE No." />
+    <Label font="$x2" layoutX="261.0" layoutY="165.0" text="SALINA CRUZ, OAX., A :" />
+    <Label font="$x1" layoutX="110.0" layoutY="184.0" text="JEFE DE PERSONAL&#10;PETROLEOS MEXICANOS&#10;C I U D A D:" />
+    <Label layoutX="325.0" layoutY="192.0" text="AT' N." />
+    <Label font="$x2" layoutX="29.0" layoutY="255.0" text="De conformidad con el Contrato Colectivo de Trabajo en vigor: Clausula (s)" textAlignment="CENTER" />
+    <Label font="$x2" layoutX="29.0" layoutY="277.0" text="solicitamos para el Trabajador" />
+    <Label font="$x2" layoutX="483.0" layoutY="281.0" text="Ficha No.." />
+    <Label font="$x2" layoutX="32.0" layoutY="307.0" text="que preste sus servicios en el Dpto. de" />
+    <Label font="$x2" layoutX="32.0" layoutY="340.0" text="con categoria de:" />
+    <TextField fx:id="tf_ficha" layoutX="552.0" layoutY="279.0" onAction="#ficha" prefWidth="134.0" />
+    <TextField fx:id="tf_trabajador" editable="false" layoutX="251.0" layoutY="279.0" prefWidth="226.0" />
+    <TextField fx:id="tf_depto" editable="false" layoutX="310.0" layoutY="306.0" prefWidth="376.0" />
+    <TextArea fx:id="ta_categoria" editable="false" layoutX="166.0" layoutY="333.0" prefHeight="42.0" prefWidth="520.0" wrapText="true" />
+    <Button layoutX="203.0" layoutY="451.0" mnemonicParsing="false" text="Mostrar">
+      <font>
+        <Font name="Quicksand-Regular" size="12.0" fx:id="x3" />
+      </font>
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/PDF24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="bt_borrar" font="$x3" layoutX="316.0" layoutY="451.0" mnemonicParsing="false" onAction="#borrar" text="Borrar">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/Trash-can24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button font="$x3" layoutX="584.0" layoutY="451.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/close24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button font="$x3" layoutX="426.0" layoutY="451.0" mnemonicParsing="false" onAction="#generar1259" text="Generar 12-59">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/Ordering24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Label layoutX="451.0" layoutY="165.0" text="fecha_actual" />
+    <Label fx:id="lbl_dia" font="$x2" layoutX="32.0" layoutY="391.0" text="El día:" />
+    <Label fx:id="lbl_fecha2" layoutX="412.0" layoutY="394.0" text="fecha 2" visible="false" />
+    <Label fx:id="lbl_fecha3" layoutX="539.0" layoutY="394.0" text="FEcha3l" visible="false" />
+    <ImageView fx:id="img_masFechas" disable="true" fitHeight="24.0" fitWidth="24.0" layoutX="252.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/add124.png" />
+      </image>
+    </ImageView>
+  </children>
+</Pane>

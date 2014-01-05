@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="414.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fitHeight="414.0" fitWidth="320.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/sheet.png" />
+      </image>
+    </ImageView>
+    <TextArea blendMode="MULTIPLY" layoutX="14.0" layoutY="47.0" opacity="1.0" prefHeight="322.0" prefWidth="292.0" promptText="" text="&#10;" wrapText="true" />
+    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="274.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/clip.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="222.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/clock.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="274.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/like.png" />
+      </image>
+    </ImageView>
+  </children>
+</Pane>

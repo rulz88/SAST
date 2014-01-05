@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="920.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.mainCtrl">
+  <children>
+    <VBox id="" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="920.0">
+      <children>
+        <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="900.0">
+          <children>
+            <ImageView fitHeight="140.25" fitWidth="187.0" layoutX="357.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../icons/sast.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="127.5" fitWidth="170.0" layoutX="736.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../icons/pemex-logo1.jpg" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="112.409725555772" fitWidth="133.2858123779297" layoutX="20.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../icons/stprm-logo.png" />
+              </image>
+            </ImageView>
+            <Label layoutX="286.0" layoutY="87.0" prefWidth="349.0" text="Sistema de Asistencia para Secretaría de Trabajo" textAlignment="CENTER" textFill="#cc0000" wrapText="false">
+              <font>
+                <Font size="16.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <BorderPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0">
+          <center>
+            <Pane fx:id="pn_content" prefHeight="200.0" prefWidth="920.0">
+              <children>
+                <Label layoutX="299.0" layoutY="186.0" text="" />
+              </children>
+            </Pane>
+          </center>
+          <top>
+            <ToolBar>
+              <items>
+                <HBox styleClass="segmented-button-bar">
+                  <Button onAction="#btnTareas" styleClass="first" text="Tareas">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Ordering24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button text="Agenda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Scorm24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button text="Busqueda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Search.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button text="Calendario">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/calenda24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button text="Ayuda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Faq.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button onAction="#btnSalir" styleClass="last" text="Salir">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/close24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                </HBox>
+              </items>
+            </ToolBar>
+          </top>
+        </BorderPane>
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>
