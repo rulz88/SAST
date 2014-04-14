@@ -40,7 +40,6 @@ public class LaborSocialCtrl implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		tc_num.setCellValueFactory(new PropertyValueFactory<Transitorio, Integer>("no"));
 		tc_ficha.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("ficha"));
         tc_nombre.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("nombre"));

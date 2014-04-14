@@ -15,10 +15,12 @@ import javafx.scene.input.MouseEvent;
 
 public class AutoCompleteComboBoxListener implements EventHandler<KeyEvent> {
 
-    private ComboBox comboBox;
+    @SuppressWarnings("rawtypes")
+	private ComboBox comboBox;
     private StringBuilder sb;
     private int lastLength;
     
+    @SuppressWarnings("rawtypes")
     public AutoCompleteComboBoxListener(ComboBox comboBox) {
         this.comboBox = comboBox;
         sb = new StringBuilder();
@@ -72,6 +74,7 @@ public class AutoCompleteComboBoxListener implements EventHandler<KeyEvent> {
             sb.delete(ir.getStart(), sb.length());
         } catch (Exception e) { }
             
+        @SuppressWarnings("rawtypes")
         ObservableList items = comboBox.getItems();
         for (int i=0; i<items.size(); i++) {
             if (items.get(i).toString().toLowerCase().startsWith(comboBox.getEditor().getText().toLowerCase())
@@ -99,11 +102,13 @@ public class AutoCompleteComboBoxListener implements EventHandler<KeyEvent> {
      * 
      */
     private void selectClosestResultBasedOnTextFieldValue(boolean affect, boolean inFocus) {
+    	@SuppressWarnings("rawtypes")
         ObservableList items = AutoCompleteComboBoxListener.this.comboBox.getItems();
         boolean found = false;
         for (int i=0; i<items.size(); i++) {
             if (AutoCompleteComboBoxListener.this.comboBox.getEditor().getText().toLowerCase().equals(items.get(i).toString().toLowerCase())) {
                 try {
+                	@SuppressWarnings("rawtypes")
                     ListView lv = ((ComboBoxListViewSkin) AutoCompleteComboBoxListener.this.comboBox.getSkin()).getListView();
                     lv.getSelectionModel().clearAndSelect(i);
                     lv.scrollTo(lv.getSelectionModel().getSelectedIndex());

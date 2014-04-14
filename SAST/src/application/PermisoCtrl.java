@@ -11,7 +11,6 @@ import application.model.AutoCompleteComboBoxListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,13 +40,9 @@ public class PermisoCtrl implements Initializable {
 	@FXML static Label lbl_fecha3;
 	@FXML static ImageView img_masFechas;
 	
-	private int ficha;
-	private String nombre;
-	private String clausula;
-	
 	ComboBox<String> cb_clausula;
 	AutoCompleteComboBoxListener aux;
-	ObservableList data = FXCollections.observableArrayList(
+	ObservableList<String> data = FXCollections.observableArrayList(
 												"CL-150",
 												"CL-143",
 												"CL-190"
@@ -78,8 +73,8 @@ public class PermisoCtrl implements Initializable {
 
 	}
 	
-	private final EventHandler actionButton = new EventHandler() {
-		@Override public void handle(Event arg0) {
+	private final EventHandler<ActionEvent> actionButton = new EventHandler<ActionEvent>() {
+		@Override public void handle(ActionEvent arg0) {
 			System.out.println("Accion del combobox " +cb_clausula.getSelectionModel().selectedItemProperty().getValue());
 		}
 	};

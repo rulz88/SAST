@@ -39,6 +39,7 @@ public class Solicitud1259Ctrl implements Initializable {
 	             rows.add(Main.con.rs.getString(2));
 			}
 			cb_depto.setItems(rows);
+			cb_depto.getSelectionModel().select(1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

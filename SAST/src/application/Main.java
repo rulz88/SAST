@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 
@@ -22,6 +23,7 @@ public class Main extends Application{
     public void start(Stage stage) throws Exception {
     	stg = stage;
     	stg.setResizable(false);
+    	stg.initStyle(StageStyle.UTILITY);
     	con = new Connector();
     	Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         Scene scene = new Scene(root);
