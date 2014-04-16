@@ -32,7 +32,7 @@ public class Solicitud1259Ctrl implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// Para meter un list en el ComboBox con los deptos
-		Main.con.consulta("select clave,nombre from departamentos;");
+		Main.con.consulta("select clave,nombre from departamento;");
 		ObservableList<String> rows = FXCollections.observableArrayList();
 		try {
 			while(Main.con.rs.next()){
@@ -47,7 +47,7 @@ public class Solicitud1259Ctrl implements Initializable {
 		
 		String id = PermisoCtrl.ficha(null);
 		System.out.print(id);
-		Main.con.consulta("select nombre,plaza,categoria,jornada,clasificacion from trabajadores where ficha="+id+";");
+		Main.con.consulta("select t.nombre,p.plaza,c.nombre,p.jornada,c.clasificacion from trabajador as t, plaza as p, categoria as c where t.ficha="+id+" and t.id_plaza=p.id and t.id_categoria=c.id");
 		try {
 			Main.con.rs.next();
 			tf_ficha.setText(id);

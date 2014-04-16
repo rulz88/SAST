@@ -92,15 +92,31 @@ public class PermisoCtrl implements Initializable {
 	
 	@FXML public static String ficha(ActionEvent ae){
 		String id = tf_ficha.getText();
-         Main.con.consulta("select t.nombre,d.nombre,t.categoria from trabajadores as t,departamentos as d where t.ficha="+id+" and t.id_depto=d.clave;");
+		String clave_depto = null;
+		String idCategoria = null;
+		Main.con.consulta("select nombre,clave_depto, id_categoria from trabajador where ficha ="+id);
             try {
 				Main.con.rs.next();
 				tf_trabajador.setText(Main.con.rs.getString(1));
-	            tf_depto.setText(Main.con.rs.getString(2));
-	            ta_categoria.setText(Main.con.rs.getString(3));
+				clave_depto = Main.con.rs.getString(2);
+	            idCategoria = Main.con.rs.getString(3);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+        Main.con.consulta("select nombre from departamento where clave ="+clave_depto);
+        try{
+        	Main.con.rs.next();
+        	tf_depto.setText(Main.con.rs.getString(1));
+        }catch(SQLException e){
+        	e.printStackTrace();
+        }
+        Main.con.consulta("select nombre from categoria where id ="+idCategoria);
+        try{
+        	Main.con.rs.next();
+        	ta_categoria.setText(Main.con.rs.getString(1));
+        }catch(SQLException e){
+        	e.printStackTrace();
+        }
             return id;
 	}
 	
