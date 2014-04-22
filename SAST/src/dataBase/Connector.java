@@ -29,7 +29,7 @@ public class Connector {
 
     public boolean Conexion(){
         try {
-            conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAST", "postgres", "pandorasbox88");
+            conexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAST", "postgres", "prisma");
             System.out.println("Conexion Creada");
             return true;
         } catch(SQLException e){

@@ -73,7 +73,9 @@ public class LaborSocialCtrl implements Initializable {
 	
 	@FXML public String tf_fichaAction(ActionEvent ae) {
 		String id = tf_ficha.getText();
-        Main.con.consulta("select * from transitorios where ficha = " + id + " ;");
+		String sql = "select * from transitorio where ficha = " + id + " ;";
+		System.out.println(sql);
+        Main.con.consulta(sql);
            try {
 				Main.con.rs.next();
 				tf_nombre.setText(Main.con.rs.getString(2));
@@ -85,8 +87,11 @@ public class LaborSocialCtrl implements Initializable {
 	}
 	
 	@FXML public String tf_NombreAction(ActionEvent ae) {
+		// ++++++++  Implementar con 'like' ++++++++
 		String id = tf_nombre.getText();
-        Main.con.consulta("select * from transitorios where nombre = '" + id + "' ;");
+		String sql = "select * from transitorio where nombre = '" + id + "' ;";
+		System.out.println(sql);
+        Main.con.consulta(sql);
            try {
 				Main.con.rs.next();
 				tf_ficha.setText(Main.con.rs.getString(1));
