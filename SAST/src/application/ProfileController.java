@@ -34,6 +34,7 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import model.User;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,7 +44,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import application.model.User;
 
 /**
  * Profile Controller.

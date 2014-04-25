@@ -1,10 +1,14 @@
 package agenda;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +21,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import model.Transitorio;
+import application.Main;
+import fr.opensagres.xdocreport.core.XDocReportException;
+import fr.opensagres.xdocreport.document.IXDocReport;
+import fr.opensagres.xdocreport.document.registry.XDocReportRegistry;
+import fr.opensagres.xdocreport.template.IContext;
+import fr.opensagres.xdocreport.template.TemplateEngineKind;
+import fr.opensagres.xdocreport.template.formatter.FieldsMetadata;
 
 
 public class LaborSocialCtrl implements Initializable {
@@ -29,7 +41,7 @@ public class LaborSocialCtrl implements Initializable {
 	@FXML Button btn_agregar;
 	@FXML Button btn_limpiar;
 	
-	@FXML TableColumn<Transitorio, Integer> tc_num;
+	@FXML TableColumn<Transitorio, String> tc_num;
 	@FXML TableColumn<Transitorio, String> tc_ficha;
 	@FXML TableColumn<Transitorio, String> tc_nombre;
 	
@@ -40,9 +52,9 @@ public class LaborSocialCtrl implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		tc_num.setCellValueFactory(new PropertyValueFactory<Transitorio, Integer>("no"));
-		tc_ficha.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("ficha"));
+		tc_num.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("num"));
         tc_nombre.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("nombre"));
+        tc_ficha.setCellValueFactory(new PropertyValueFactory<Transitorio, String>("ficha"));
         
         tv_asistencia.setItems(data);
 
@@ -50,17 +62,18 @@ public class LaborSocialCtrl implements Initializable {
 	
 	@FXML public void btnAgregar(MouseEvent me) {
 		numero++;
+		Integer no = new Integer(numero);
 		Transitorio t = new Transitorio(
-				new Integer(numero),
-				tf_ficha.getText(),
-				tf_nombre.getText()
+				no.toString(),
+				tf_nombre.getText(),
+				tf_ficha.getText()
 		);
 		data.add(t);
 		
-		tf_ficha.clear();
 		tf_nombre.clear();
+		tf_ficha.clear();
 		btn_agregar.setDisable(true);
-		System.out.println(t.getNumero());
+		System.out.println(t.getNum());
 		
 	}
 	
@@ -99,6 +112,39 @@ public class LaborSocialCtrl implements Initializable {
 				e.printStackTrace();
 			}
            return id;
+	}
+	
+	@FXML public void generar(ActionEvent ae) {
+		try {
+            // 1) Load Docx file by filling Velocity template engine and cache
+            // it to the registry
+            InputStream in = LaborSocialCtrl.class.getResourceAsStream( "PlantillaAsistenciaLaborSocial.docx" );
+            IXDocReport report = XDocReportRegistry.getRegistry().loadReport( in, TemplateEngineKind.Velocity );
+
+            // 2) Create fields metadata to manage lazy loop (#foreach velocity) for table row.
+            FieldsMetadata metadata = report.createFieldsMetadata();
+            //metadata.load( "tr", Asistencia.class, true );
+            metadata.load( "tr", Transitorio.class, true );
+
+            // 3) Create context Java model
+            IContext context = report.createContext();
+            context.put( "actividad", ta_descripcion.getText() );
+
+            context.put( "tr", data );
+            
+            context.put( "secretario", "SR. MARTIN ESTEVES CASAS" );
+
+            // 4) Generate report by merging Java model with the Docx
+            OutputStream out = new FileOutputStream( new File( "Lista de Asistencia.docx" ) );
+            report.process( context, out );
+
+        }
+        catch ( IOException e ) {
+            e.printStackTrace();
+        }
+        catch ( XDocReportException e ) {
+            e.printStackTrace();
+        }
 	}
 
 }

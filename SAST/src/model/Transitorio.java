@@ -1,19 +1,19 @@
-package agenda;
+package model;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Transitorio {
 	
-	private final SimpleIntegerProperty no;
-	private final SimpleStringProperty ficha;
+	private final SimpleStringProperty num;
 	private final SimpleStringProperty nombre;
+	private final SimpleStringProperty ficha;
     
      
-    public Transitorio(Integer no, String ficha, String nombre) {
+    public Transitorio(String no, String nombre, String ficha) {
+    	 this.num = new SimpleStringProperty(no);
          this.nombre = new SimpleStringProperty(nombre);
          this.ficha = new SimpleStringProperty(ficha);
-         this.no = new SimpleIntegerProperty(no);
+         
     }
     
     public String getNombre() {
@@ -32,12 +32,12 @@ public class Transitorio {
         this.ficha.set(ficha);
     }
     
-    public Integer getNumero() {
-        return no.get();
+    public String getNum() {
+        return this.num.get();
     }
 
-    public void setNumero(Integer num) {
-        no.set(num);
+    public void setNum(String num) {
+        this.num.set(num);
     }
 
     
