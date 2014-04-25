@@ -21,6 +21,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import model.Transitorio;
 import application.Main;
 import fr.opensagres.xdocreport.core.XDocReportException;
@@ -129,13 +131,26 @@ public class LaborSocialCtrl implements Initializable {
             // 3) Create context Java model
             IContext context = report.createContext();
             context.put( "actividad", ta_descripcion.getText() );
-
             context.put( "tr", data );
-            
             context.put( "secretario", "SR. MARTIN ESTEVES CASAS" );
+            
+            // 3.1) Create abd show a File Chooser instance to get file path
+            FileChooser fileChooser = new FileChooser();
+            
+            //Set extension filter
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Documento de Word (*.docx)", "*.txt");
+            fileChooser.getExtensionFilters().add(extFilter);
+            
+            //Show save file dialog
+            File file = fileChooser.showSaveDialog(new Stage());
+            System.out.println(file.getPath());
+            /*if(file != null){
+                
+            }*/
 
             // 4) Generate report by merging Java model with the Docx
-            OutputStream out = new FileOutputStream( new File( "Lista de Asistencia.docx" ) );
+            OutputStream out = new FileOutputStream( new File( file.getPath() + ".docx" ) );
+            //OutputStream out = new FileOutputStream( file );
             report.process( context, out );
 
         }
