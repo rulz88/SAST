@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.mainCtrl">
+  <children>
+    <VBox id="" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0">
+      <children>
+        <BorderPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0">
+          <center>
+            <Pane fx:id="pn_content" prefHeight="200.0" prefWidth="920.0">
+              <children>
+                <Label layoutX="299.0" layoutY="186.0" text="" />
+                <ImageView fitHeight="312.8899936834531" fitWidth="467.0" layoutX="227.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../icons/logo_letras.png" />
+                  </image>
+                </ImageView>
+              </children>
+            </Pane>
+          </center>
+          <top>
+            <ToolBar prefHeight="81.0" prefWidth="920.0">
+              <items>
+                <HBox prefHeight="57.34937286376953" styleClass="segmented-button-bar">
+                  <MenuButton contentDisplay="TOP" minHeight="54.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="127.0" styleClass="button, first" text="Tareas">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Ordering24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#btnTareas" text="Nuevo Permiso" />
+                      <MenuItem mnemonicParsing="false" text="Forma 12 59" />
+                    </items>
+                  </MenuButton>
+                  <Button contentDisplay="TOP" onAction="#btnAgenda" prefHeight="58.0" text="Agenda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Scorm24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Busqueda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Search.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Calendario">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/calenda24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Ayuda">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Faq.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" onAction="#btnSalir" prefHeight="58.0" styleClass="last" text="Salir">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/close24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Region prefHeight="58.0" prefWidth="38.0" />
+                  <MenuButton minHeight="48.8253173828125" minWidth="116.0" mnemonicParsing="false" prefHeight="58.000099999997474" prefWidth="183.0" styleClass="button, first" text="Bienvenid@">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Add-male-user24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Editar mi información" />
+                      <MenuItem mnemonicParsing="false" text="Cerrar Sesion" />
+                    </items>
+                  </MenuButton>
+                </HBox>
+                <Region prefHeight="58.0" prefWidth="35.0" />
+                <ImageView fitHeight="57.34938476839932" fitWidth="67.99998474121094" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../icons/stprm-logo.png" />
+                  </image>
+                </ImageView>
+              </items>
+            </ToolBar>
+          </top>
+        </BorderPane>
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

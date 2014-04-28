@@ -23,9 +23,9 @@ public class Main extends Application{
     public void start(Stage stage) throws Exception {
     	stg = stage;
     	stg.setResizable(false);
-    	//stg.initStyle(StageStyle.UTILITY);
+    	stg.initStyle(StageStyle.UTILITY);
     	con = new Connector();
-    	Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+    	Parent root = FXMLLoader.load(getClass().getResource("Main_alt.fxml"));
         Scene scene = new Scene(root);
         stg.setScene(scene);
         stg.setTitle("Sistema de Asistencia de Secretaria de Trabajo");

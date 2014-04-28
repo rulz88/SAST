@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextArea;
 //import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -40,13 +41,11 @@ public class PermisoCtrl implements Initializable {
 	@FXML static Label lbl_fecha3;
 	@FXML static ImageView img_masFechas;
 	
-	ComboBox<String> cb_clausula;
+	static String clausula;
+	
+	static ComboBox<String> cb_clausula;
 	AutoCompleteComboBoxListener aux;
-	ObservableList<String> data = FXCollections.observableArrayList(
-												"CL-150",
-												"CL-143",
-												"CL-190"
-												);
+	ObservableList<String> data = FXCollections.observableArrayList();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -60,7 +59,6 @@ public class PermisoCtrl implements Initializable {
 		cb_clausula.setLayoutY(245);
 		cb_clausula.setPrefHeight(21);
 		cb_clausula.setPrefWidth(121);
-		cb_clausula.setItems(data);
 		
 		aux = new AutoCompleteComboBoxListener(cb_clausula);
 		cb_clausula.setOnAction(actionButton);
@@ -70,12 +68,27 @@ public class PermisoCtrl implements Initializable {
         datePicker.setLayoutX(451);
         datePicker.setLayoutY(165);
         pn_main.getChildren().add(datePicker);
+        
+        Main.con.consulta("select numero,descripcion from clausulas_cct;");
+		try {
+			while(Main.con.rs.next()){
+	             data.add("CL-"+Main.con.rs.getString(1));
+			}
+			cb_clausula.setItems(data);
+			cb_clausula.getSelectionModel().select(1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 	
 	private final EventHandler<ActionEvent> actionButton = new EventHandler<ActionEvent>() {
+		
 		@Override public void handle(ActionEvent arg0) {
-			System.out.println("Accion del combobox " +cb_clausula.getSelectionModel().selectedItemProperty().getValue());
+			clausula = cb_clausula.getSelectionModel().selectedItemProperty().getValue();
+			System.out.println("Accion del combobox " + clausula);
+			
 		}
 	};
 	

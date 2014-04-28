@@ -21,6 +21,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Transitorio;
@@ -35,6 +36,7 @@ import fr.opensagres.xdocreport.template.formatter.FieldsMetadata;
 
 public class LaborSocialCtrl implements Initializable {
 	
+	@FXML AnchorPane ap_pane;
 	@FXML TextArea ta_descripcion;
 	
 	@FXML TextField tf_ficha;
@@ -83,13 +85,15 @@ public class LaborSocialCtrl implements Initializable {
 		System.out.println("limpiar");
 		tf_ficha.clear();
 		tf_nombre.clear();
+		data.clear();
+		numero = 0;
 		btn_agregar.setDisable(true);
 	}
 	
 	@FXML public String tf_fichaAction(ActionEvent ae) {
 		String id = tf_ficha.getText();
 		String sql = "select * from transitorio where ficha = " + id + " ;";
-		System.out.println(sql);
+		//System.out.println(sql);
         Main.con.consulta(sql);
            try {
 				Main.con.rs.next();
@@ -138,7 +142,7 @@ public class LaborSocialCtrl implements Initializable {
             FileChooser fileChooser = new FileChooser();
             
             //Set extension filter
-            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Documento de Word (*.docx)", "*.txt");
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Documento de Word (*.docx)", "*.docx");
             fileChooser.getExtensionFilters().add(extFilter);
             
             //Show save file dialog
@@ -152,6 +156,9 @@ public class LaborSocialCtrl implements Initializable {
             OutputStream out = new FileOutputStream( new File( file.getPath() + ".docx" ) );
             //OutputStream out = new FileOutputStream( file );
             report.process( context, out );
+            
+            Stage stg = (Stage) ap_pane.getScene().getWindow();
+            stg.hide();
 
         }
         catch ( IOException e ) {

@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="650.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.LaborSocialCtrl">
+<AnchorPane fx:id="ap_pane" prefHeight="650.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="agenda.LaborSocialCtrl">
   <!-- TODO Add Nodes -->
   <children>
     <ImageView fitHeight="105.0" fitWidth="124.50000208074397" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
@@ -40,9 +40,9 @@
     <Line endX="-105.0" endY="130.0" layoutX="341.0" layoutY="488.0" startX="80.0" startY="130.0" />
     <TableView fx:id="tv_asistencia" layoutX="21.0" layoutY="369.0" prefHeight="216.0" prefWidth="458.0">
       <columns>
-        <TableColumn fx:id="tc_num" maxWidth="5000.0" minWidth="10.0" prefWidth="61.0" text="No." />
-        <TableColumn fx:id="tc_ficha" maxWidth="5000.0" minWidth="10.0" prefWidth="101.0" text="Ficha" />
-        <TableColumn fx:id="tc_nombre" maxWidth="5000.0" minWidth="10.0" prefWidth="298.0" text="Nombre" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="61.0" text="No." fx:id="tc_num" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="101.0" text="Ficha" fx:id="tc_ficha" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="298.0" text="Nombre" fx:id="tc_nombre" />
       </columns>
     </TableView>
     <Label layoutX="37.0" layoutY="350.0" prefWidth="451.0" text="LISTA DE ASISTENCIA DE TRANSITORIOS DE PETROQUIMICA A LA LABOR SOCIAL " textAlignment="CENTER" />
@@ -59,6 +59,7 @@
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
       </graphic>
-    </Button><Button id="numero" layoutX="21.0" layoutY="298.0" mnemonicParsing="false" onAction="#generar" onMouseClicked="#btnLimpiar" prefHeight="32.0" prefWidth="125.0" text="Generar Documento" />
+    </Button>
+    <Button id="numero" layoutX="21.0" layoutY="298.0" mnemonicParsing="false" onAction="#generar" onMouseClicked="#btnLimpiar" prefHeight="32.0" prefWidth="125.0" text="Generar Documento" />
   </children>
 </AnchorPane>
