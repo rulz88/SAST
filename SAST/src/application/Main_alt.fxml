@@ -9,13 +9,13 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.mainCtrl">
+<AnchorPane id="AnchorPane" fx:id="ap_root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.mainCtrl">
   <children>
     <VBox id="" layoutX="0.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0">
       <children>
         <BorderPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="920.0">
           <center>
-            <Pane fx:id="pn_content" prefHeight="200.0" prefWidth="920.0">
+            <Pane fx:id="pn_content" onMouseClicked="#rightClickMenu" prefHeight="200.0" prefWidth="920.0">
               <children>
                 <Label layoutX="299.0" layoutY="186.0" text="" />
                 <ImageView fitHeight="312.8899936834531" fitWidth="467.0" layoutX="227.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
@@ -30,7 +30,16 @@
             <ToolBar prefHeight="81.0" prefWidth="920.0">
               <items>
                 <HBox prefHeight="57.34937286376953" styleClass="segmented-button-bar">
-                  <MenuButton contentDisplay="TOP" minHeight="54.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="127.0" styleClass="button, first" text="Tareas">
+                  <Button contentDisplay="TOP" onMouseClicked="#btnInicio" prefHeight="58.0" styleClass="tb-btn" text="Inicio">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/home24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <MenuButton contentDisplay="TOP" minHeight="54.0" mnemonicParsing="false" popupSide="BOTTOM" prefHeight="58.0" prefWidth="77.0" styleClass="tb-btn" text="Tareas">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -43,7 +52,7 @@
                       <MenuItem mnemonicParsing="false" text="Forma 12 59" />
                     </items>
                   </MenuButton>
-                  <Button contentDisplay="TOP" onAction="#btnAgenda" prefHeight="58.0" text="Agenda">
+                  <Button contentDisplay="TOP" onAction="#btnAgenda" prefHeight="58.0" styleClass="tb-btn" text="Agenda">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -52,7 +61,7 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Busqueda">
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" styleClass="tb-btn" text="Busqueda">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -61,7 +70,7 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Calendario">
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" styleClass="tb-btn" text="Calendario">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -70,7 +79,16 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" text="Ayuda">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="85.0" styleClass="tb-btn" text="Preferencias">
+                    <graphic>
+                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="@../icons/Options24.png" />
+                        </image>
+                      </ImageView>
+                    </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" prefHeight="57.34937286376953" styleClass="tb-btn" text="Ayuda">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -79,17 +97,8 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" onAction="#btnSalir" prefHeight="58.0" styleClass="last" text="Salir">
-                    <graphic>
-                      <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                          <Image url="@../icons/close24.png" />
-                        </image>
-                      </ImageView>
-                    </graphic>
-                  </Button>
-                  <Region prefHeight="58.0" prefWidth="38.0" />
-                  <MenuButton minHeight="48.8253173828125" minWidth="116.0" mnemonicParsing="false" prefHeight="58.000099999997474" prefWidth="183.0" styleClass="button, first" text="Bienvenid@">
+                  <Region prefHeight="59.0" prefWidth="56.0" />
+                  <MenuButton contentDisplay="TOP" minHeight="48.8253173828125" minWidth="62.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="85.0" styleClass="tb-btn" text="Admin">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -103,12 +112,35 @@
                     </items>
                   </MenuButton>
                 </HBox>
-                <Region prefHeight="58.0" prefWidth="35.0" />
+                <Region prefHeight="59.0" prefWidth="135.0" />
                 <ImageView fitHeight="57.34938476839932" fitWidth="67.99998474121094" pickOnBounds="true" preserveRatio="true">
                   <image>
                     <Image url="@../icons/stprm-logo.png" />
                   </image>
                 </ImageView>
+                <VBox prefHeight="59.0" prefWidth="38.0">
+                  <children>
+                    <Button contentDisplay="TOP" minHeight="29.0" minWidth="36.0" onAction="#btnSalir" prefHeight="29.0" prefWidth="36.0" styleClass="tb-btn" text="">
+                      <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../icons/close24.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Region prefHeight="10.0" prefWidth="200.0" />
+                    <Button contentDisplay="TOP" minHeight="15.9609375" minWidth="36.0" onMouseClicked="#minimize" prefHeight="15.9609375" prefWidth="36.0" styleClass="tb-btn" text="">
+                      <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../icons/linkedin.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </VBox>
               </items>
             </ToolBar>
           </top>

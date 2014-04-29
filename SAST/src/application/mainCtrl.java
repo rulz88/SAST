@@ -14,12 +14,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
+import static application.Main.stg;
+
 
 public class mainCtrl implements Initializable {
-	
+
 	@FXML public static Pane pn_content;
 
 	@Override
@@ -31,22 +37,54 @@ public class mainCtrl implements Initializable {
 	/*
 	 * 	Botones de la Barra de Herramientas
 	 * */
-	
+
+
+    @FXML public void btnInicio(MouseEvent me) {
+        mainCtrl.loadPane("home.fxml");
+    }
 	@FXML public void btnTareas(ActionEvent ae) {
     	Main.permisos.show();
-    	Main.stg.toBack();
+    	stg.toBack();
     	Main.permisos.toFront();
     }
 	
 	@FXML public void btnAgenda(ActionEvent ae) {
     	Main.laborSocial.show();
-    	Main.stg.toBack();
+    	stg.toBack();
     	Main.laborSocial.toFront();
     }
 	
-	@FXML public void btnSalir(ActionEvent ae) {
-		Platform.exit();
-	}
+	@FXML public void btnSalir(ActionEvent ae) { Platform.exit(); }
+
+    @FXML public void minimize(MouseEvent me) { stg.setIconified(true); }
+
+    @FXML public void rightClickMenu(MouseEvent me) {
+        if(me.getButton() == MouseButton.SECONDARY) {
+            System.out.println(me.getButton().name());
+
+            final ContextMenu cm = new ContextMenu();
+            MenuItem cmItem1 = new MenuItem("Expedir Permiso");
+            cmItem1.setOnAction(new EventHandler<ActionEvent>() {
+                public void handle(ActionEvent e) {
+                    btnTareas(new ActionEvent());
+                }
+            });
+
+            MenuItem cmItem2 = new MenuItem("Forma 12 59");
+            cmItem2.setOnAction(new EventHandler<ActionEvent>() {
+                public void handle(ActionEvent e) {
+                    mainCtrl.loadPane("Solicitud_trabajadores.fxml");
+                    //Main.permisos.hide();
+                    //Main.stg.toFront();
+                }
+            });
+
+            //cm.getItems().add(cmItem1);
+            cm.getItems().add(cmItem2);
+            cm.show(pn_content,me.getScreenX(),me.getScreenY());
+
+        }
+    }
 	
 	static void loadPane(final String source) {
 		// TODO Auto-generated method stub
@@ -75,5 +113,7 @@ public class mainCtrl implements Initializable {
             fade.play();
          }
 	}
+
+
 
 }

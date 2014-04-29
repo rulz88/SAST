@@ -19,6 +19,86 @@
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
+.tb-btn {
+    -fx-background-color: transparent, transparent, transparent, transparent;
+}
+
+.tb-btn:hover{
+    -fx-background-color: transparent, rgba(0,0,0,.1), rgba(0,0,0,.1), transparent;
+}
+
+.tb-btn:armed {
+    -fx-background-color: transparent, rgba(0,0,0,.1), rgba(0,0,0,.1), rgba(0,0,0,.2);
+}
+
+.stab:focused {
+	-fx-background-color: transparent, rgba(0,0,0,.1), rgba(0,0,0,.1), transparent;
+}
+
+.shadow-pane {
+	/*-fx-effect: dropshadow(three-pass-box, grey, 10, 0, 0, 15);*/
+	-fx-effect: dropshadow(three-pass-box, rgb(87, 89, 92), 10, 0, 4, 4);
+}
+
+.background {
+	-light-black: rgb(74, 75, 78);
+    -dark-highlight: rgb(87, 89, 92);
+    -dark-black: rgb(39, 40, 40);
+    -darkest-black: rgb(5, 5, 5);
+    -mid-gray: rgb(216, 222, 227);
+    -fx-background-color: -mid-gray;
+}
+
+/*	Theme Colors */
+.emerald { -fx-background-color: #2ECC71; }
+.clouds { -fx-background-color: #ECF0F1; }
+.silver { -fx-background-color: #BDC3C7; }
+.wet-asphalt { -fx-background-color: #34495E; }
+.turquoise {-fx-background-color: #1ABC9C;}
+.green-sea {-fx-background-color: #16A085;}
+.nephritis {-fx-background-color: #27AE60;}
+.peter-river {-fx-background-color: #3498DB;}
+.belize-hole {-fx-background-color: #2980B9;}
+.amethyst {-fx-background-color: #9B59B6;}
+.wisteria {-fx-background-color: #8E44AD;}
+.midnight-blue {-fx-background-color: #2C3E50;}
+.sun-flower {-fx-background-color: #F1C40F;}
+.orange  {-fx-background-color: #F39C12;}
+.carrot  {-fx-background-color: #E67E22;}
+.pumpkin {-fx-background-color: #D35400;}
+.alizarin {-fx-background-color: #E74C3C;}
+.pomegranate {-fx-background-color: #C0392B;}
+.concrete  {-fx-background-color: #95A5A6;}
+.asbestos  {-fx-background-color: #7F8C8D;}
+
+.border {
+    -fx-border-color: blue;
+    -fx-border-insets: 5;
+    -fx-border-width: 3;
+    -fx-border-style: dashed;
+}
+
+/*#background {
+    -light-black: rgb(74, 75, 78);
+    -dark-highlight: rgb(87, 89, 92);
+    -dark-black: rgb(39, 40, 40);
+    -darkest-black: rgb(5, 5, 5);
+    -mid-gray: rgb(216, 222, 227);
+    -light-green: rgb(198, 255, 206);
+    -fx-background-color: -mid-gray;
+}
+
+.tool-bar {
+    -fx-base: -dark-black;
+    -fx-font-size: 12pt;
+    -fx-background-color:
+        linear-gradient(to bottom, derive(-fx-base,-30%), derive(-fx-base,-60%)),
+        linear-gradient(to bottom, -light-black 2%, -dark-black 98%);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: .9em 0.416667em .9em 0.416667em;
+    -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+}
+
 .segmented-button-bar .button {
     -fx-background-color:
         -darkest-black,
@@ -48,4 +128,4 @@
 
 .tool-bar .spacer {
     -fx-padding: 0 5.417em 0 0;
-}
+}*/
