@@ -40,7 +40,7 @@ public class mainCtrl implements Initializable {
 
 
     @FXML public void btnInicio(MouseEvent me) {
-        mainCtrl.loadPane("home.fxml");
+        mainCtrl.loadPane("_home.fxml");
     }
 	@FXML public void btnTareas(ActionEvent ae) {
     	Main.permisos.show();
