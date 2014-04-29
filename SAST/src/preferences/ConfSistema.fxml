@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="338.0" prefWidth="461.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="preferences.ConfSistCtrl">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button layoutX="203.0" layoutY="281.0" mnemonicParsing="false" text="Guardar">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/Save-as24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+      <tooltip>
+        <Tooltip text="Guarda los cambios efectuados." />
+      </tooltip>
+    </Button>
+    <Button layoutX="108.0" layoutY="281.0" mnemonicParsing="false" text="Editar">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/edit-file24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+      <tooltip>
+        <Tooltip text="Activa los botones de edicion para hacer cambios." />
+      </tooltip>
+    </Button>
+    <Button layoutX="309.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#cancelarClicked" text="Cancelar">
+      <graphic>
+        <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../icons/close24.png" />
+          </image>
+        </ImageView>
+      </graphic>
+      <tooltip>
+        <Tooltip text="Cancela la operación." />
+      </tooltip>
+    </Button>
+    <Label layoutX="96.0" layoutY="38.0" prefWidth="353.0" text="CONFIGURACIONES GENERALES DEL SISTEMA">
+      <font>
+        <Font size="14.0" />
+      </font>
+    </Label>
+    <Label layoutX="22.0" layoutY="99.0" text="Secretario(a) general&#10;de la sección 38 S.T.P.R.M.">
+      <font>
+        <Font size="12.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="22.0" layoutY="142.0" text="Secretario(a) de trabajo&#10;de la T.R.D.A.S.C." />
+    <TextField layoutX="203.0" layoutY="102.0" prefWidth="200.0">
+      <tooltip>
+        <Tooltip text="Elija editar para cambiar el dato." />
+      </tooltip>
+    </TextField>
+    <TextField layoutX="203.0" layoutY="145.0" prefWidth="200.0" />
+    <TextField layoutX="203.0" layoutY="187.0" prefWidth="200.0" />
+    <Label font="$x1" layoutX="22.0" layoutY="181.0" text="Jefe de personal&#10;Marino Pacifico:" />
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/Maintenance64.png" />
+      </image>
+    </ImageView>
+    <Label layoutX="22.0" layoutY="222.0" text="Centro de trabajo:" />
+    <ComboBox layoutX="203.0" layoutY="222.0" prefHeight="21.0" prefWidth="200.0" promptText="Terminal Marino Pacifico" visibleRowCount="4">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/Faq.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/Faq.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../icons/Faq.png" />
+      </image>
+    </ImageView>
+  </children>
+</AnchorPane>

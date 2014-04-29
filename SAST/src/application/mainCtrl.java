@@ -53,6 +53,12 @@ public class mainCtrl implements Initializable {
     	stg.toBack();
     	Main.laborSocial.toFront();
     }
+
+    @FXML public void btnPreferencias(ActionEvent ae) {
+        Main.config.show();
+        stg.toBack();
+        Main.config.toFront();
+    }
 	
 	@FXML public void btnSalir(ActionEvent ae) { Platform.exit(); }
 

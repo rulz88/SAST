@@ -16,13 +16,15 @@ import javafx.util.Duration;
 
 public class Main extends Application{
 
-	static Stage stg;
+	public static Stage stg;
 	static Stage permisos;
+    public static Stage config;
 	public static Connector con;
 	static Stage laborSocial;
 
     private double xOffset = 0.0;
     private double yOffset = 0.0;
+
 
     @Override 
     public void start(Stage stage) throws Exception {
@@ -73,6 +75,13 @@ public class Main extends Application{
         Scene scenelab = new Scene(labor);
         laborSocial.setScene(scenelab);
         laborSocial.setTitle("Labor Social");
+
+        config = new Stage();
+        config.setResizable(false);
+        Parent conf = FXMLLoader.load(getClass().getResource("..\\preferences\\ConfSistema.fxml"));
+        Scene sceneconf = new Scene(conf);
+        config.setScene(sceneconf);
+        config.setTitle("Preferencias");
         
         
     }

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="338.0" prefWidth="461.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="449.0000999999975" prefWidth="475.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="preferences.ConfController">
   <!-- TODO Add Nodes -->
   <children>
-    <Button layoutX="203.0" layoutY="281.0" mnemonicParsing="false" text="Guardar">
+    <Button fx:id="guardar" layoutX="233.0" layoutY="395.0" mnemonicParsing="false" text="Guardar">
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -20,10 +18,10 @@
         </ImageView>
       </graphic>
       <tooltip>
-        <Tooltip text="Guarda los cambios efectuados." />
+        <Tooltip text="Guarda los cambios realizados." />
       </tooltip>
     </Button>
-    <Button layoutX="108.0" layoutY="281.0" mnemonicParsing="false" text="Editar">
+    <Button fx:id="editar" layoutX="134.0" layoutY="395.0" mnemonicParsing="false" text="Editar">
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -32,10 +30,10 @@
         </ImageView>
       </graphic>
       <tooltip>
-        <Tooltip text="Activa los botones de edicion para hacer cambios." />
+        <Tooltip text="Para editar la categoria del trabajador" />
       </tooltip>
     </Button>
-    <Button layoutX="309.0" layoutY="281.0" mnemonicParsing="false" text="Cancelar">
+    <Button fx:id="cancelar" layoutX="344.0" layoutY="395.0" mnemonicParsing="false" text="Cancelar">
       <graphic>
         <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -47,53 +45,35 @@
         <Tooltip text="Cancela la operación." />
       </tooltip>
     </Button>
-    <Label layoutX="96.0" layoutY="38.0" prefWidth="353.0" text="CONFIGURACIONES GENERALES DEL SISTEMA">
+    <Label layoutX="26.0" layoutY="104.0" text="Ingrese la ficha del trabajador:">
       <font>
-        <Font name="Quicksand-Bold" size="14.0" />
+        <Font size="12.0" fx:id="x1" />
       </font>
     </Label>
-    <Label layoutX="22.0" layoutY="99.0" text="Secretario(a) general&#10;de la sección 38 S.T.P.R.M.">
-      <font>
-        <Font name="Quicksand-Regular" size="12.0" fx:id="x1" />
-      </font>
-    </Label>
-    <Label font="$x1" layoutX="22.0" layoutY="142.0" text="Secretario(a) de trabajo&#10;de la T.R.D.A.S.C." />
-    <TextField layoutX="203.0" layoutY="102.0" prefWidth="200.0">
+    <TextField fx:id="ficha" layoutX="219.0" layoutY="100.0" prefWidth="86.0">
       <tooltip>
-        <Tooltip text="Elija editar para cambiar el dato." />
+        <Tooltip text="Ingrese los 6 digitos de su ficha." />
       </tooltip>
     </TextField>
-    <TextField layoutX="203.0" layoutY="145.0" prefWidth="200.0" />
-    <TextField layoutX="203.0" layoutY="187.0" prefWidth="200.0" />
-    <Label font="$x1" layoutX="22.0" layoutY="181.0" text="Jefe de personal&#10;Marino Pacifico:" />
-    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView id="foto" fitHeight="108.0" fitWidth="108.0" layoutX="353.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+    <Label font="$x1" layoutX="26.0" layoutY="143.0" text="Nombre:" />
+    <TextField fx:id="nombre" layoutX="91.0" layoutY="140.0" prefWidth="214.0" />
+    <Label font="$x1" layoutX="26.0" layoutY="185.0" text="R.F.C." />
+    <TextField fx:id="rfc" layoutX="91.0" layoutY="181.0" prefWidth="86.0" />
+    <Label layoutX="120.0" layoutY="37.0" text="PERFIL DEL TRABAJADOR">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+    <TableView fx:id="tabla" layoutX="26.0" layoutY="232.0" prefHeight="132.0" prefWidth="413.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Column X" />
+        <TableColumn prefWidth="75.0" text="Column X" />
+      </columns>
+    </TableView>
+    <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../icons/Maintenance64.png" />
-      </image>
-    </ImageView>
-    <Label layoutX="22.0" layoutY="222.0" text="Centro de trabajo:" />
-    <ComboBox layoutX="203.0" layoutY="222.0" prefHeight="21.0" prefWidth="200.0" promptText="Terminal Marino Pacifico" visibleRowCount="4">
-      <items>
-        <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
-        </FXCollections>
-      </items>
-    </ComboBox>
-    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../icons/Faq.png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../icons/Faq.png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="403.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../icons/Faq.png" />
+        <Image url="@../icons/couple64.png" />
       </image>
     </ImageView>
   </children>
