@@ -85,7 +85,8 @@ public class mainCtrl implements Initializable {
                 }
             });
 
-            //cm.getItems().add(cmItem1);
+            //cm.getScene().getStylesheets().add("context.css");
+            cm.getItems().add(cmItem1);
             cm.getItems().add(cmItem2);
             cm.show(pn_content,me.getScreenX(),me.getScreenY());
 

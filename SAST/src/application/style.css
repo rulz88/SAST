@@ -49,6 +49,20 @@
     -fx-background-color: -mid-gray;
 }
 
+.context-menu {
+    -fx-border-color: blue;
+    -fx-background-color: #006699;
+    -fx-text-fill: white;
+}
+
+.menu-item .label {
+  -fx-text-fill: yellow;
+}
+
+.menu-item:focused .label {
+  -fx-text-fill: white;
+}
+
 /*	Theme Colors */
 .emerald { -fx-background-color: #2ECC71; }
 .clouds { -fx-background-color: #ECF0F1; }
