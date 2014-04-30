@@ -39,7 +39,7 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <MenuButton contentDisplay="TOP" minHeight="54.0" mnemonicParsing="false" popupSide="BOTTOM" prefHeight="58.0" prefWidth="77.0" styleClass="tb-btn" text="Tareas">
+                  <MenuButton contentDisplay="TOP" minHeight="54.0" mnemonicParsing="false" popupSide="TOP" prefHeight="58.0" prefWidth="85.0" styleClass="tb-btn" text="Tareas">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -79,7 +79,7 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#btnPreferencias" onMouseClicked="#btnPreferencias" prefHeight="58.0" prefWidth="85.0" styleClass="tb-btn" text="Preferencias">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#btnPreferencias" prefHeight="58.0" prefWidth="85.0" styleClass="tb-btn" text="Preferencias">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -97,7 +97,7 @@
                       </ImageView>
                     </graphic>
                   </Button>
-                  <Region prefHeight="59.0" prefWidth="56.0" />
+                  <Region prefHeight="59.0" prefWidth="49.0" />
                   <MenuButton contentDisplay="TOP" minHeight="48.8253173828125" minWidth="62.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="85.0" styleClass="tb-btn" text="Admin">
                     <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
